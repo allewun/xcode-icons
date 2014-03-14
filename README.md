@@ -1,0 +1,1 @@
+[Descriptions of icons used in Xcode](http://allewun.github.io/xcode-icons/)
