@@ -1,0 +1,172 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
+
+$red     : #ff3754;
+$orange  : #ff9749;
+$yellow  : #f1d950;
+$green   : #00b33e;
+$blue    : #3378cc;
+$purple  : #bf50c2;
+$gray    : #aaa;
+$darkBlue: #284352;
+$teal    : darken(#00ffbc, 5%);
+
+/* Modified CSS reset from: http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+============================================================================ */
+
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, code,
+a, del, dfn, em, img,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, button,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 14px;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  background: #e9edf2;
+  background: url(noise.png),
+              linear-gradient(to bottom, #fff 0%, #e2e7ee 20%, #e2e7ee 100%);
+  color: #333;
+}
+
+@mixin clearfix {
+  &:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+  }
+}
+
+@mixin inset {
+  box-shadow: 0 2px 0 #f8f8f8,
+              inset 0 0 4px rgba(0,0,0,.03),
+              inset 0 0 4px rgba(0,0,0,.03),
+              inset 0 0 4px rgba(0,0,0,.03),
+              inset 0 0 4px rgba(0,0,0,.03),
+              inset 0 0 4px rgba(0,0,0,.03);
+}
+
+@mixin darkInset {
+  border: 1px solid $darkBlue;
+  background: $darkBlue;
+  color: #fff;
+  box-shadow: inset 0 0 10px rgba(0,0,0,.6),
+              0 3px 0 #fff;
+  text-shadow: 0 3px 0 #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $darkBlue;
+}
+
+h1 {
+  @include darkInset;
+
+  font-size: 2em;
+  text-align: center;
+  margin: 40px auto 0 auto;
+  width: 200px;
+  height: 200px;
+  display: block;
+  border-radius: 100px;
+  line-height: 200px;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin: -60px auto 30px auto;
+  text-shadow: 0 1px 0 #fff,
+               0 1px 0 #fff,
+               0 1px 0 #fff;
+  width: 300px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.4em;
+  text-decoration: underline;
+  width: 300px;
+  margin: 0 auto;
+
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+}
+
+section {
+  @include clearfix;
+  @include inset;
+
+  margin: 80px auto;
+  background: #fff;
+  border: 1px solid #91a0c0;
+  border-left: none;
+  border-right: none;
+  border-radius: 3px;
+  font-size: 1em;
+  padding: 20px 120px;
+}
+
+.hide {
+  display: none;
+}
+
+
+.nobullets {
+  list-style: none;
+}
+
+ul {
+  list-style-type: none;
+  width: 300px;
+  margin: 0 auto;
+  padding-left: 30px;
+}
+
+li img {
+  vertical-align: middle;
+}
+
+strong {
+  font-weight: bold;
+  color: $darkBlue;
+}
+
+em {
+  font-style: italic;
+}
+
+.br {
+  display: block;
+  height: 0;
+}
+
+p {
+  p+& { margin-top: 15px; }
+  h3+& { margin-top: 5px; }
+}
+
+p+ul {
+  margin-top: 5px;
+}
+
+footer {
+  font-size: 0.9em;
+  font-style: italic;
+  color: $darkBlue;
+  padding: 10px;
+
+  a {
+    color: $blue;
+    font-size: inherit;
+  }
+}
